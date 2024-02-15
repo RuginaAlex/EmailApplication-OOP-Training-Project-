@@ -1,11 +1,20 @@
-Project 1
-Email Application
-Scenario: You are an IT Support Administrator Specialist and are
-charged with the task of creating email accounts for new hires.
-Your application should do the following:
- Generate an email with the following syntax: firstname.lastname@department.company.com
- Determine the department (sales, development, accounting), if none leave blank
- Generate a random String for a password
- Have set methods to change the password, set the mailbox capacity, and define an alternate
-email address
- Have get methods to display the name, email, and mailbox capacity
+# Email Application Project
+
+## Scenario
+You are an IT Support Administrator Specialist charged with the task of creating email accounts for new hires.
+
+## Application Requirements
+The application should be capable of performing the following tasks:
+
+- Generate an email with the following syntax: `firstname.lastname@department.company.com`.
+  - If there is no department specified, the department field should be left blank.
+- Determine the department (sales, development, accounting); leave blank if none.
+- Generate a random string for a password.
+- Include set methods to:
+  - Change the password.
+  - Set the mailbox capacity.
+  - Define an alternate email address.
+- Have get methods to display:
+  - The name.
+  - The email.
+  - The mailbox capacity.
