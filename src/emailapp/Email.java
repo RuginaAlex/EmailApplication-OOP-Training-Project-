@@ -7,20 +7,22 @@ public class Email {
     private String lastname;
     private String password;
     private String department;
-    private int mailboxCapacity;
-    private String alternateEmail;
+    private String email;
+    private int mailboxCapacity = 100;
 
     public Email(String firstname, String lastname) {
         this.firstname = firstname;
         this.lastname = lastname;
 
-        System.out.println("Email created : " + this.firstname + this.lastname);
 
         this.department = setDepartment();
         System.out.println("Department is: " + this.department);
 
 
         this.password = managePasswords();
+
+        this.email = firstname.toLowerCase() + "." + lastname.toLowerCase() + "@" + department + ".com";
+
     }
 
     public String setDepartment() {   /// The user sets the department
@@ -28,7 +30,7 @@ public class Email {
         int depChoice;
         String department = "";
 
-        System.out.println("DEPARTMENT CODES\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none");
+        System.out.println("New worker: " + firstname + "\nDEPARTMENT CODES\n1 for Sales\n2 for Development\n3 for Accounting\n0 for none");
 
         do {
             System.out.print("Enter department code: ");
@@ -41,7 +43,7 @@ public class Email {
 
             switch (depChoice) {
                 case 1:
-                    department = "Sales";
+                    department = "sales";
                     break;
                 case 2:
                     department = "dev";
@@ -66,7 +68,7 @@ public class Email {
 
 
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter the desired password length (number of characters): ");
+        System.out.print("Enter the desired password length (number of characters): ");
         int lenght = s.nextInt();
         String passwordSet = "ABCDEFGHIJKMNLOPRSTU4324821081!^(@*&%";
         char[] password = new char[lenght];
@@ -109,9 +111,33 @@ public class Email {
             }
         } while (choice != 1 && choice != 2);
 
-        System.out.println("Your password is: " + password);
+
         return password;
     }
 
+    public void setMailboxCapacity(int capacity){
+        this.mailboxCapacity = capacity;
+    }
+
+
+    public void changePassword (String password){
+        this.password = password;
+    }
+
+    public int getMailboxCapacity() {
+        return mailboxCapacity;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void showInfo () {
+        System.out.println("-".repeat(30));
+        System.out.printf("Your email is: %s %nYour password is: %s %nMailbox capacity: %smb",email,password,mailboxCapacity);
+
+
+    }
 
 }

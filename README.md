@@ -13,7 +13,6 @@ The application should be capable of performing the following tasks:
 - Include set methods to:
   - Change the password.
   - Set the mailbox capacity.
-  - Define an alternate email address.
 - Have get methods to display:
   - The name.
   - The email.
